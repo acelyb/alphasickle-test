@@ -1,14 +1,15 @@
+# NOTE
+
+This project is just for learning Quant and testing factor generating.
+
 # alphasickle
 利用指数增强模型收割alpha
-
-
 
 # 模型结构：
 
 包括原始数据获取、因子生成、因子数据预处理、单因子检验、收益预测模型及风险模型等，具体流程如图：
 
 ![](指数增强模型结构.png)
-
 
 # 代码框架：
 
@@ -32,6 +33,26 @@
 
 10.index_enhance.py：指数增强模型功能文件，用于对有效单因子进行因子合成与正交，进行收益预测，并通过风险模型进行权重优化，最终生成回测结果。
 
+# 代码运行
+
+1. 按代码框架顺序，运行中文文件
+
+# 继承关系
+
+1. 原始数据获取
+
+```mermaid
+classDiagram
+FactorGenerater <|-- RawDataFetcher
+RawDataFetcher <|-- TushareFetcher
+FactorGenerater : dates_d
+FactorGenerater : dates_m
+```
+
+# 名词解释
+
+1. adj_factor: 复权因子
+2. pct_chg_M: 真实涨跌幅（复权后的涨跌幅）
 
 # 模型说明：
 
